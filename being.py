@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from IPython import embed
 
 
 class Brain(nn.Module):
@@ -60,5 +61,4 @@ class Brain(nn.Module):
             shape = plinear.bias.data.shape
             selector = torch.rand(size=shape)
             slinear.bias.data = (selector*plinear.bias.data) + ((1-selector)*mlinear.bias.data)
-
 
